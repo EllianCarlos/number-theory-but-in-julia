@@ -5,7 +5,7 @@ function tau(x::Integer)::Integer
 			ans = 1 + ans
 		end
 	end
-	return asn
+	return ans
 end
 
 τ = tau
@@ -17,7 +17,7 @@ function sigma(x::Integer)::Integer
 			ans = i + ans
 		end
 	end
-	return asn
+	return ans
 end
 
 σ = sigma
@@ -49,3 +49,4 @@ function isPerfect(x::Integer)::Boolean
 	return getMappingFromFunction(n)[3]
 end
 
+sigma(12)
