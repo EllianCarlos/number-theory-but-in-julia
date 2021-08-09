@@ -27,26 +27,22 @@ function s(x::Integer)::Integer
 end
 
 # Adding cache to this function can make thing easier
-function getMappingFromFunction(n::Integer)::Array{Boolean}
+function getMappingFromFunction(n::Integer)::Array{Bool}
 	sn = s(n)
-	mappingSofNProperty = [
-		sn < n,
-		sn == n,
-		sn > n,
-	]
-	return mappingofNSProperty
+	mappingSofNProperty = [sn < n,sn == n,sn > n]
+	return mappingSofNProperty
 end
 
-function isDeficient(x::Integer)::Boolean
-	return getMappingFromFunction(n)[1]
+function isDeficient(x::Integer)::Bool
+	return getMappingFromFunction(x)[1]
 end
 
-function isAbundant(x::Integer)::Boolean
-	return getMappingFromFunction(n)[2]	
+function isAbundant(x::Integer)::Bool
+	return getMappingFromFunction(x)[2]	
 end
 
-function isPerfect(x::Integer)::Boolean
-	return getMappingFromFunction(n)[3]
+function isPerfect(x::Integer)::Bool
+	return getMappingFromFunction(x)[3]
 end
 
-sigma(12)
+# print(sigma(10))
