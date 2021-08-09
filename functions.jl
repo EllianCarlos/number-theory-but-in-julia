@@ -26,26 +26,26 @@ function s(x::Integer)::Integer
 	return sigma(x) - x
 end
 
+# Adding cache to this function can make thing easier
+function getMappingFromFunction(n::Integer)::Array{Boolean}
+	sn = s(n)
+	mappingSofNProperty = [
+		sn < n,
+		sn == n,
+		sn > n,
+	]
+	return mappingofNSProperty
+end
+
 function isDeficient(x::Integer)::Boolean
-	if s(x) < x
-		return true
-	else 
-		return false
-	end
+	return getMappingFromFunction(n)[1]
 end
 
 function isAbundant(x::Integer)::Boolean
-	if s(x) > x
-		return true
-	else 
-		return false
-	end
+	return getMappingFromFunction(n)[2]	
 end
 
 function isPerfect(x::Integer)::Boolean
-	if x == s(x)
-		return true
-	else 
-		return false
-	end
+	return getMappingFromFunction(n)[3]
 end
+
