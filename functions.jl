@@ -26,3 +26,26 @@ function s(x::Integer)::Integer
 	return sigma(x) - x
 end
 
+function isDeficient(x::Integer)::Boolean
+	if s(x) < x
+		return true
+	else 
+		return false
+	end
+end
+
+function isAbundant(x::Integer)::Boolean
+	if s(x) > x
+		return true
+	else 
+		return false
+	end
+end
+
+function isPerfect(x::Integer)::Boolean
+	if x == s(x)
+		return true
+	else 
+		return false
+	end
+end
