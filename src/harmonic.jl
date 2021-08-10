@@ -8,4 +8,12 @@ function getHarmonicNumber(n::Integer)::Float64
     return H
 end
 
+function getHarmonicNumber(n::Integer, order::Integer)::Float64
+    H = 0
+    for i = 1:n
+        H = H + (1 / i^order)
+    end
+    return H
+end
+
 eulermascheroni = convert(Float64, γ)
