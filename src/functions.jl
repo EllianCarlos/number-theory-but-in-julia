@@ -1,46 +1,46 @@
 function tau(x::Integer)::Integer
-	ans = 0
-	for i = 1:x
-		if x % i == 0
-			ans = 1 + ans
-		end
-	end
-	return ans
+    ans = 0
+    for i = 1:x
+        if x % i == 0
+            ans = 1 + ans
+        end
+    end
+    return ans
 end
 
 τ = tau
 
 function sigma(x::Integer)::Integer
-	ans = 0
-	for i = 1:x
-		if x % i == 0
-			ans = i + ans
-		end
-	end
-	return ans
+    ans = 0
+    for i = 1:x
+        if x % i == 0
+            ans = i + ans
+        end
+    end
+    return ans
 end
 
 σ = sigma
 
 function s(x::Integer)::Integer
-	return sigma(x) - x
+    return sigma(x) - x
 end
 
 # Adding cache to this function can make thing easier
 function getMappingFromSFunction(n::Integer)::Array{Bool}
-	sn = s(n)
-	mappingSofNProperty = [sn < n,sn == n,sn > n]
-	return mappingSofNProperty
+    sn = s(n)
+    mappingSofNProperty = [sn < n, sn == n, sn > n]
+    return mappingSofNProperty
 end
 
 function isDeficient(x::Integer)::Bool
-	return getMappingFromSFunction(x)[1]
+    return getMappingFromSFunction(x)[1]
 end
 
 function isPerfect(x::Integer)::Bool
-	return getMappingFromSFunction(x)[2]	
+    return getMappingFromSFunction(x)[2]
 end
 
 function isAbundant(x::Integer)::Bool
-	return getMappingFromSFunction(x)[3]
+    return getMappingFromSFunction(x)[3]
 end
