@@ -11,5 +11,3 @@ function fac(n)
     end
     return caching[n]
 end
-
-print(fac(2))
