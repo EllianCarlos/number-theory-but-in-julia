@@ -1,6 +1,15 @@
+caching = [1]
 function fac(n)
-    if n == 1 || n == 0
+    if n == 0
         return 1
+    elseif size(caching, 1) >= n
+        return caching[n]
     end
-    return n*fac(n)
+    fac = caching[size(caching, 1)]
+    for i = size(caching, 1)+1:n
+        append!(caching, fac*i)
+    end
+    return caching[n]
 end
+
+print(fac(2))
