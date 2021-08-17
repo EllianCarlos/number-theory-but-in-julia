@@ -83,3 +83,48 @@ end
 
 πf = pi
 πfc = pic
+
+function 𝞋(n::Integer)::Float64
+    value = 0.0
+    for i = 2:n
+        isPrime = true
+        for j = 2:i
+            if (i % j == 0 && i != j)
+                isPrime = false
+                break
+            end
+        end
+        if isPrime && (i != n-1)
+            value += log(ℯ, p)
+        end
+    end
+    return value
+end
+
+chebyshev_theta = 𝞋
+
+function ψ(n::Integer)::Float64
+    value = 0.00
+    for p = 2:n
+        isPrime = true
+        for j = 2:p
+            if (p % j == 0 && p != j)
+                isPrime = false
+                break
+            end
+        end
+        if isPrime
+            pk = p^1
+            sum = 0.0
+            while pk <= n
+                sum += log(ℯ, p)
+                pk *= p
+                println("ln $p")
+            end
+            value += sum
+        end
+    end
+    return value
+end
+
+chebyshev_psi = ψ
