@@ -8,7 +8,7 @@ function tau(n::Integer)::Integer
     return ans
 end
 
-τ = tau
+τf = tau
 
 function sigma(n::Integer)::Integer
     ans = 0
@@ -20,7 +20,7 @@ function sigma(n::Integer)::Integer
     return ans
 end
 
-σ = sigma
+σf = sigma
 
 function s(n::Integer)::Integer
     return sigma(n) - n
@@ -44,3 +44,42 @@ end
 function isAbundant(n::Integer)::Bool
     return getMappingFromSFunction(n)[3]
 end
+
+# Including N
+function pi(n::Integer)::Integer 
+    numberOfPrimesTillN = 0
+    for i = 1:n
+        isPrime = true
+        for j=1:i
+            if i % j == 0 && i == j && j == 1
+                isPrime = false
+                break
+            end
+        end
+        if isPrime
+            numberOfPrimesTillN += 1
+        end
+    end
+    return numberOfPrimesTillN
+end
+
+# Not Including N
+function pic(n::Integer)::Integer 
+    numberOfPrimesTillN = 0
+    for i = 1:n-1
+        isPrime = true
+        for j=1:i
+            if i % j == 0 && i == j && j == 1
+                isPrime = false
+                break
+            end
+        end
+        if isPrime
+            numberOfPrimesTillN += 1
+        end
+    end
+    return numberOfPrimesTillN
+end
+
+πf = pi
+πfc = pic
