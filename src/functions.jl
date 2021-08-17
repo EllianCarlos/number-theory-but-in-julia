@@ -46,12 +46,12 @@ function isAbundant(n::Integer)::Bool
 end
 
 # Including N
-function pi(n::Integer)::Integer 
+function pic(n::Integer)::Integer
     numberOfPrimesTillN = 0
-    for i = 1:n
+    for i = 2:n
         isPrime = true
-        for j=1:i
-            if i % j == 0 && i == j && j == 1
+        for j = 1:i
+            if (i % j == 0 && i != j) || j == 1
                 isPrime = false
                 break
             end
@@ -64,17 +64,17 @@ function pi(n::Integer)::Integer
 end
 
 # Not Including N
-function pic(n::Integer)::Integer 
+function pi(n::Integer)::Integer
     numberOfPrimesTillN = 0
-    for i = 1:n-1
+    for i = 2:n-1
         isPrime = true
-        for j=1:i
-            if i % j == 0 && i == j && j == 1
+        for j = 2:i
+            if (i % j == 0 && i != j)
                 isPrime = false
                 break
             end
         end
-        if isPrime
+        if isPrime && (i != n-1)
             numberOfPrimesTillN += 1
         end
     end
