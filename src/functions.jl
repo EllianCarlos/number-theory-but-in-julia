@@ -74,7 +74,7 @@ function pi(n::Integer)::Integer
                 break
             end
         end
-        if isPrime && (i != n-1)
+        if isPrime && (i != n - 1)
             numberOfPrimesTillN += 1
         end
     end
@@ -94,7 +94,7 @@ function 𝞋(n::Integer)::Float64
                 break
             end
         end
-        if isPrime && (i != n-1)
+        if isPrime && (i != n - 1)
             value += log(ℯ, p)
         end
     end
