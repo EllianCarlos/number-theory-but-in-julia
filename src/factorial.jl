@@ -21,5 +21,3 @@ function stirlingNumber(m, k)
         return k * stirlingNumber(m - 1, k) + stirlingNumber(m - 1, k - 1)
     end
 end
-
-print(stirlingNumber(4, 4))
