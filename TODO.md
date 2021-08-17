@@ -5,6 +5,5 @@
 - create a MVC model to the created package
 - create tests for
     - functions
-    - mersenne
     - harmonic
     - factorial
