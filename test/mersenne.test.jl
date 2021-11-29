@@ -1,6 +1,5 @@
 using Test
-
-include("../src/mersenne.jl")
+using NumberTheory
 
 @testset "Mersenne Numbers" begin
     # Tests for the isPowerOfTwoFunction

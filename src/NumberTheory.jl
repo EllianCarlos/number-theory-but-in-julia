@@ -1,4 +1,6 @@
+module NumberTheory
 include("harmonic.jl")
 include("functions.jl")
-include("factorial.jl")
+include("harmonic.jl")
 include("mersenne.jl")
+end

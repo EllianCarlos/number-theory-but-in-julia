@@ -1,3 +1,5 @@
+export fac, stirlingNumber
+
 caching_fac = [1]
 function fac(n)
     if n == 0
